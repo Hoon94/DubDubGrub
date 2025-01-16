@@ -14,6 +14,7 @@
 		78681DCA2D37E7EF006ACC2E /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78681DC92D37E7EF006ACC2E /* LocationMapView.swift */; };
 		78681DCC2D37E81E006ACC2E /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78681DCB2D37E81E006ACC2E /* LocationListView.swift */; };
 		78681DCE2D37E842006ACC2E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78681DCD2D37E842006ACC2E /* ProfileView.swift */; };
+		78BED1362D394C1C005F7676 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1352D394C1C005F7676 /* LocationDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		78681DC92D37E7EF006ACC2E /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
 		78681DCB2D37E81E006ACC2E /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
 		78681DCD2D37E842006ACC2E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		78BED1352D394C1C005F7676 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				78681DC72D37E792006ACC2E /* AppTabView.swift */,
 				78681DC92D37E7EF006ACC2E /* LocationMapView.swift */,
 				78681DCB2D37E81E006ACC2E /* LocationListView.swift */,
+				78BED1352D394C1C005F7676 /* LocationDetailView.swift */,
 				78681DCD2D37E842006ACC2E /* ProfileView.swift */,
 			);
 			path = DubDubGrub;
@@ -150,6 +153,7 @@
 			files = (
 				78681DC82D37E792006ACC2E /* AppTabView.swift in Sources */,
 				78681DCC2D37E81E006ACC2E /* LocationListView.swift in Sources */,
+				78BED1362D394C1C005F7676 /* LocationDetailView.swift in Sources */,
 				78681DCA2D37E7EF006ACC2E /* LocationMapView.swift in Sources */,
 				78681DCE2D37E842006ACC2E /* ProfileView.swift in Sources */,
 				78681DB92D37E349006ACC2E /* DubDubGrubApp.swift in Sources */,
