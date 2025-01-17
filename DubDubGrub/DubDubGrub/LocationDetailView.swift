@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct LocationDetailView: View {
+    
+    let columns = [GridItem(.flexible()), 
+                   GridItem(.flexible()),
+                   GridItem(.flexible())]
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
@@ -61,6 +66,20 @@ struct LocationDetailView: View {
                 }
                 .padding(.horizontal)
                 
+                Text("Who's Here?")
+                    .bold()
+                    .font(.title2)
+                
+                LazyVGrid(columns: columns, content: {
+                    FirstNameAvatarView(firstName: "Lee")
+                    FirstNameAvatarView(firstName: "Kim")
+                    FirstNameAvatarView(firstName: "Park")
+                    FirstNameAvatarView(firstName: "Lee")
+                    FirstNameAvatarView(firstName: "Lee")
+                    FirstNameAvatarView(firstName: "Lee")
+                    FirstNameAvatarView(firstName: "Lee")
+                })
+                
                 Spacer()
             }
             .navigationTitle("Location Name")
@@ -89,6 +108,22 @@ struct LocationActionButton: View {
                 .scaledToFit()
                 .foregroundStyle(.white)
                 .frame(width: 22, height: 22)
+        }
+    }
+}
+
+struct FirstNameAvatarView: View {
+    
+    var firstName: String
+    
+    var body: some View {
+        VStack {
+            AvatarView(size: 64)
+            
+            Text(firstName)
+                .bold()
+                .lineLimit(1)
+                .minimumScaleFactor(0.75)
         }
     }
 }
