@@ -15,25 +15,15 @@ struct LocationDetailView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            Image(.defaultBannerAsset)
-                .resizable()
-                .scaledToFill()
-                .frame(height: 120)
+            BannerImageView(imageName: .defaultBannerAsset)
             
             HStack {
-                Label("123 Main Street", systemImage: "mappin.and.ellipse")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                
+                AddressView(address: "123 Main Street")
                 Spacer()
             }
             .padding(.horizontal)
             
-            Text("This is a test description. This is a test description. This is a test description. This is a test description. This is a test description.")
-                .lineLimit(3)
-                .minimumScaleFactor(0.75)
-                .frame(height: 70)
-                .padding(.horizontal)
+            DescriptionView(text: "This is a test description. This is a test description. This is a test description. This is a test description. This is a test description.")
             
             ZStack {
                 Capsule()
@@ -128,5 +118,41 @@ struct FirstNameAvatarView: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.75)
         }
+    }
+}
+
+struct BannerImageView: View {
+    
+    var imageName: ImageResource
+    
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .scaledToFill()
+            .frame(height: 120)
+    }
+}
+
+struct AddressView: View {
+    
+    var address: String
+    
+    var body: some View {
+        Label(address, systemImage: "mappin.and.ellipse")
+            .font(.caption)
+            .foregroundStyle(.secondary)
+    }
+}
+
+struct DescriptionView: View {
+    
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .lineLimit(3)
+            .minimumScaleFactor(0.75)
+            .frame(height: 70)
+            .padding(.horizontal)
     }
 }

@@ -15,6 +15,12 @@
 		78681DCC2D37E81E006ACC2E /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78681DCB2D37E81E006ACC2E /* LocationListView.swift */; };
 		78681DCE2D37E842006ACC2E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78681DCD2D37E842006ACC2E /* ProfileView.swift */; };
 		78BED1362D394C1C005F7676 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1352D394C1C005F7676 /* LocationDetailView.swift */; };
+		78BED1382D40DA52005F7676 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1372D40DA52005F7676 /* Color+Ext.swift */; };
+		78BED13A2D40DC87005F7676 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1392D40DC87005F7676 /* LocationCell.swift */; };
+		78BED13C2D40DCDD005F7676 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED13B2D40DCDD005F7676 /* AvatarView.swift */; };
+		78BED13E2D40DF7A005F7676 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED13D2D40DF7A005F7676 /* CustomModifiers.swift */; };
+		78BED1402D40DFC1005F7676 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED13F2D40DFC1005F7676 /* View+Ext.swift */; };
+		78BED1422D40E0FA005F7676 /* DDGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1412D40E0FA005F7676 /* DDGButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		78681DCB2D37E81E006ACC2E /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
 		78681DCD2D37E842006ACC2E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		78BED1352D394C1C005F7676 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		78BED1372D40DA52005F7676 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		78BED1392D40DC87005F7676 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		78BED13B2D40DCDD005F7676 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		78BED13D2D40DF7A005F7676 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
+		78BED13F2D40DFC1005F7676 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		78BED1412D40E0FA005F7676 /* DDGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +72,12 @@
 		78681DB72D37E349006ACC2E /* DubDubGrub */ = {
 			isa = PBXGroup;
 			children = (
+				78BED1432D40E367005F7676 /* Extensions */,
+				78BED1442D40E398005F7676 /* Views */,
 				78681DC62D37E420006ACC2E /* DubDubGrub.entitlements */,
 				78681DB82D37E349006ACC2E /* DubDubGrubApp.swift */,
 				78681DBC2D37E34C006ACC2E /* Assets.xcassets */,
 				78681DBE2D37E34C006ACC2E /* Preview Content */,
-				78681DC72D37E792006ACC2E /* AppTabView.swift */,
-				78681DC92D37E7EF006ACC2E /* LocationMapView.swift */,
-				78681DCB2D37E81E006ACC2E /* LocationListView.swift */,
-				78BED1352D394C1C005F7676 /* LocationDetailView.swift */,
-				78681DCD2D37E842006ACC2E /* ProfileView.swift */,
 			);
 			path = DubDubGrub;
 			sourceTree = "<group>";
@@ -79,6 +88,55 @@
 				78681DBF2D37E34C006ACC2E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		78BED1432D40E367005F7676 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				78BED1372D40DA52005F7676 /* Color+Ext.swift */,
+				78BED13F2D40DFC1005F7676 /* View+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		78BED1442D40E398005F7676 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				78BED13D2D40DF7A005F7676 /* CustomModifiers.swift */,
+				78BED1472D40E403005F7676 /* CustomViews */,
+				78BED1462D40E3F7005F7676 /* Cells */,
+				78BED1452D40E3A2005F7676 /* Screens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		78BED1452D40E3A2005F7676 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				78681DC72D37E792006ACC2E /* AppTabView.swift */,
+				78681DC92D37E7EF006ACC2E /* LocationMapView.swift */,
+				78681DCB2D37E81E006ACC2E /* LocationListView.swift */,
+				78BED1352D394C1C005F7676 /* LocationDetailView.swift */,
+				78681DCD2D37E842006ACC2E /* ProfileView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		78BED1462D40E3F7005F7676 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				78BED1392D40DC87005F7676 /* LocationCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		78BED1472D40E403005F7676 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				78BED13B2D40DCDD005F7676 /* AvatarView.swift */,
+				78BED1412D40E0FA005F7676 /* DDGButton.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,10 +210,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				78681DC82D37E792006ACC2E /* AppTabView.swift in Sources */,
+				78BED13E2D40DF7A005F7676 /* CustomModifiers.swift in Sources */,
+				78BED1382D40DA52005F7676 /* Color+Ext.swift in Sources */,
 				78681DCC2D37E81E006ACC2E /* LocationListView.swift in Sources */,
 				78BED1362D394C1C005F7676 /* LocationDetailView.swift in Sources */,
 				78681DCA2D37E7EF006ACC2E /* LocationMapView.swift in Sources */,
 				78681DCE2D37E842006ACC2E /* ProfileView.swift in Sources */,
+				78BED1402D40DFC1005F7676 /* View+Ext.swift in Sources */,
+				78BED13A2D40DC87005F7676 /* LocationCell.swift in Sources */,
+				78BED1422D40E0FA005F7676 /* DDGButton.swift in Sources */,
+				78BED13C2D40DCDD005F7676 /* AvatarView.swift in Sources */,
 				78681DB92D37E349006ACC2E /* DubDubGrubApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
