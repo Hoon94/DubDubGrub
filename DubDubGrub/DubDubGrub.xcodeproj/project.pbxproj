@@ -22,6 +22,8 @@
 		78BED1402D40DFC1005F7676 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED13F2D40DFC1005F7676 /* View+Ext.swift */; };
 		78BED1422D40E0FA005F7676 /* DDGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1412D40E0FA005F7676 /* DDGButton.swift */; };
 		78BED14A2D43DB14005F7676 /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1492D43DB14005F7676 /* DDGLocation.swift */; };
+		78BED14C2D45154B005F7676 /* DDGProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED14B2D45154B005F7676 /* DDGProfile.swift */; };
+		78BED14E2D451785005F7676 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED14D2D451785005F7676 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		78BED13F2D40DFC1005F7676 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		78BED1412D40E0FA005F7676 /* DDGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGButton.swift; sourceTree = "<group>"; };
 		78BED1492D43DB14005F7676 /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
+		78BED14B2D45154B005F7676 /* DDGProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGProfile.swift; sourceTree = "<group>"; };
+		78BED14D2D451785005F7676 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				78BED1492D43DB14005F7676 /* DDGLocation.swift */,
+				78BED14B2D45154B005F7676 /* DDGProfile.swift */,
+				78BED14D2D451785005F7676 /* MockData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,7 +230,9 @@
 				78BED13E2D40DF7A005F7676 /* CustomModifiers.swift in Sources */,
 				78BED1382D40DA52005F7676 /* Color+Ext.swift in Sources */,
 				78681DCC2D37E81E006ACC2E /* LocationListView.swift in Sources */,
+				78BED14E2D451785005F7676 /* MockData.swift in Sources */,
 				78BED1362D394C1C005F7676 /* LocationDetailView.swift in Sources */,
+				78BED14C2D45154B005F7676 /* DDGProfile.swift in Sources */,
 				78BED14A2D43DB14005F7676 /* DDGLocation.swift in Sources */,
 				78681DCA2D37E7EF006ACC2E /* LocationMapView.swift in Sources */,
 				78681DCE2D37E842006ACC2E /* ProfileView.swift in Sources */,
