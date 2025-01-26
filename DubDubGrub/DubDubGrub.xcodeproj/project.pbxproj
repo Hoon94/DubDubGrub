@@ -27,6 +27,7 @@
 		78BED1522D463162005F7676 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1512D463162005F7676 /* CloudKitManager.swift */; };
 		78BED1542D463340005F7676 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1532D463340005F7676 /* Constants.swift */; };
 		78BED1562D463872005F7676 /* CKRecord+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1552D463872005F7676 /* CKRecord+Ext.swift */; };
+		78BED1582D46574B005F7676 /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1572D46574B005F7676 /* AlertItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		78BED1512D463162005F7676 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		78BED1532D463340005F7676 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		78BED1552D463872005F7676 /* CKRecord+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKRecord+Ext.swift"; sourceTree = "<group>"; };
+		78BED1572D46574B005F7676 /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				78BED1432D40E367005F7676 /* Extensions */,
 				78BED1512D463162005F7676 /* CloudKitManager.swift */,
 				78BED1532D463340005F7676 /* Constants.swift */,
+				78BED1572D46574B005F7676 /* AlertItem.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				78681DCA2D37E7EF006ACC2E /* LocationMapView.swift in Sources */,
 				78681DCE2D37E842006ACC2E /* ProfileView.swift in Sources */,
 				78BED1522D463162005F7676 /* CloudKitManager.swift in Sources */,
+				78BED1582D46574B005F7676 /* AlertItem.swift in Sources */,
 				78BED1402D40DFC1005F7676 /* View+Ext.swift in Sources */,
 				78BED13A2D40DC87005F7676 /* LocationCell.swift in Sources */,
 				78BED1562D463872005F7676 /* CKRecord+Ext.swift in Sources */,
