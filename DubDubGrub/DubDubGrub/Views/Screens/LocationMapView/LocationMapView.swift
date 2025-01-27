@@ -14,9 +14,10 @@ struct LocationMapView: View {
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $viewModel.region, annotationItems: locationManager.locations) {
+            Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: locationManager.locations) {
                 MapMarker(coordinate: $0.location.coordinate, tint: .brandPrimary)
             }
+            .tint(.grubRed)
             .ignoresSafeArea()
             
             VStack {
@@ -28,6 +29,8 @@ struct LocationMapView: View {
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
         })
         .onAppear {
+            viewModel.checkIfLocationServicesIsEnabled()
+            
             if locationManager.locations.isEmpty {
                 viewModel.getLocations(for: locationManager)
             }
