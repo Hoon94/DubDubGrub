@@ -5,9 +5,29 @@
 //  Created by Daehoon Lee on 1/26/25.
 //
 
-import Foundation
+import UIKit
 
 enum RecordType {
     static let location = "DDGLocation"
     static let profile  = "DDGProfile"
+}
+
+enum PlaceholderImage {
+    static let avatar = UIImage(resource: .defaultAvatar)
+    static let square = UIImage(resource: .defaultSquareAsset)
+    static let banner = UIImage(resource: .defaultBannerAsset)
+}
+
+enum ImageDimension {
+    case square
+    case banner
+    
+    static func getPlaceholder(for dimension: ImageDimension) -> UIImage {
+        switch dimension {
+        case .square:
+            return PlaceholderImage.square
+        case .banner:
+            return PlaceholderImage.banner
+        }
+    }
 }
