@@ -35,6 +35,7 @@
 		78BED1642D4785C7005F7676 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1632D4785C7005F7676 /* LogoView.swift */; };
 		78BED1672D478A42005F7676 /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1662D478A42005F7676 /* XDismissButton.swift */; };
 		78BED16A2D4A17A9005F7676 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1692D4A17A9005F7676 /* PhotoPicker.swift */; };
+		78BED16C2D4CC4D5005F7676 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED16B2D4CC4D5005F7676 /* UIImage+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		78BED1632D4785C7005F7676 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		78BED1662D478A42005F7676 /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
 		78BED1692D4A17A9005F7676 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		78BED16B2D4CC4D5005F7676 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				78BED13F2D40DFC1005F7676 /* View+Ext.swift */,
 				78BED1552D463872005F7676 /* CKRecord+Ext.swift */,
 				78BED15F2D47606D005F7676 /* CKAsset+Ext.swift */,
+				78BED16B2D4CC4D5005F7676 /* UIImage+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				78BED1602D47606D005F7676 /* CKAsset+Ext.swift in Sources */,
 				78BED1622D47857A005F7676 /* OnboardView.swift in Sources */,
 				78BED1422D40E0FA005F7676 /* DDGButton.swift in Sources */,
+				78BED16C2D4CC4D5005F7676 /* UIImage+Ext.swift in Sources */,
 				78BED13C2D40DCDD005F7676 /* AvatarView.swift in Sources */,
 				78681DB92D37E349006ACC2E /* DubDubGrubApp.swift in Sources */,
 			);
