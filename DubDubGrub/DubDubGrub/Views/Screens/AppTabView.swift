@@ -27,10 +27,11 @@ struct AppTabView: View {
                 Label("Profile", systemImage: "person")
             }
         }
+        .onAppear { CloudKitManager.shared.getUserRecord() }
         .tint(.brandPrimary)
     }
 }
 
 #Preview {
-    AppTabView()
+    AppTabView().environmentObject(LocationManager())
 }
