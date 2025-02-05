@@ -16,6 +16,7 @@
 		78681DCE2D37E842006ACC2E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78681DCD2D37E842006ACC2E /* ProfileView.swift */; };
 		789993612D4F87D2006FF664 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789993602D4F87D2006FF664 /* LoadingView.swift */; };
 		789993642D538BA1006FF664 /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789993632D538BA1006FF664 /* LocationDetailViewModel.swift */; };
+		789993662D53B795006FF664 /* ProfileModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789993652D53B794006FF664 /* ProfileModalView.swift */; };
 		78BED1362D394C1C005F7676 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1352D394C1C005F7676 /* LocationDetailView.swift */; };
 		78BED1382D40DA52005F7676 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1372D40DA52005F7676 /* Color+Ext.swift */; };
 		78BED13A2D40DC87005F7676 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BED1392D40DC87005F7676 /* LocationCell.swift */; };
@@ -53,6 +54,7 @@
 		78681DCD2D37E842006ACC2E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		789993602D4F87D2006FF664 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		789993632D538BA1006FF664 /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
+		789993652D53B794006FF664 /* ProfileModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModalView.swift; sourceTree = "<group>"; };
 		78BED1352D394C1C005F7676 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		78BED1372D40DA52005F7676 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		78BED1392D40DC87005F7676 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				789993632D538BA1006FF664 /* LocationDetailViewModel.swift */,
 				78BED1352D394C1C005F7676 /* LocationDetailView.swift */,
+				789993652D53B794006FF664 /* ProfileModalView.swift */,
 			);
 			path = LocationDetailView;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				78BED1582D46574B005F7676 /* AlertItem.swift in Sources */,
 				78BED1402D40DFC1005F7676 /* View+Ext.swift in Sources */,
 				78BED13A2D40DC87005F7676 /* LocationCell.swift in Sources */,
+				789993662D53B795006FF664 /* ProfileModalView.swift in Sources */,
 				78BED1562D463872005F7676 /* CKRecord+Ext.swift in Sources */,
 				78BED15E2D468D19005F7676 /* LocationManager.swift in Sources */,
 				78BED1602D47606D005F7676 /* CKAsset+Ext.swift in Sources */,
