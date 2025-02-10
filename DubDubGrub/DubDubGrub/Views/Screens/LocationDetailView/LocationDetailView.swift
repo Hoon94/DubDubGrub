@@ -47,7 +47,7 @@ struct LocationDetailView: View {
                         }
                         
                         Button {
-                            viewModel.updateCheckInStatus(to: .checkedOut)
+                            viewModel.updateCheckInStatus(to: viewModel.isCheckedIn ? .checkedOut : .checkedIn)
                         } label: {
                             LocationActionButton(color: .brandPrimary, imageName: "person.fill.checkmark")
                         }
@@ -61,13 +61,14 @@ struct LocationDetailView: View {
                 
                 ScrollView {
                     LazyVGrid(columns: viewModel.columns, content: {
-                        FirstNameAvatarView(image: PlaceholderImage.avatar, firstName: "Lee")
-                            .onTapGesture {
-                                viewModel.isShowingProfileModal = true
-                            }
+                        ForEach(viewModel.checkedInProfiles) { profile in
+                            FirstNameAvatarView(profile: profile)
+                                .onTapGesture {
+                                    viewModel.isShowingProfileModal = true
+                                }
+                        }
                     })
                 }
-                
                 Spacer()
             }
             
@@ -85,6 +86,7 @@ struct LocationDetailView: View {
                 .zIndex(2)
             }
         }
+        .onAppear { viewModel.getCheckedInProfiles() }
         .alert(item: $viewModel.alertItem, content: { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
         })
@@ -121,14 +123,13 @@ struct LocationActionButton: View {
 
 struct FirstNameAvatarView: View {
     
-    var image: UIImage
-    var firstName: String
+    var profile: DDGProfile
     
     var body: some View {
         VStack {
-            AvatarView(image: image, size: 64)
+            AvatarView(image: profile.createAvatarImage(), size: 64)
             
-            Text(firstName)
+            Text(profile.firstName)
                 .bold()
                 .lineLimit(1)
                 .minimumScaleFactor(0.75)
