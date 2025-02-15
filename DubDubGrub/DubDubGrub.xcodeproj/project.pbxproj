@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7844EA712D5F4AF1001CA8F7 /* LocationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844EA702D5F4AF1001CA8F7 /* LocationListViewModel.swift */; };
 		78681DB92D37E349006ACC2E /* DubDubGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78681DB82D37E349006ACC2E /* DubDubGrubApp.swift */; };
 		78681DBD2D37E34C006ACC2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78681DBC2D37E34C006ACC2E /* Assets.xcassets */; };
 		78681DC02D37E34C006ACC2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78681DBF2D37E34C006ACC2E /* Preview Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7844EA702D5F4AF1001CA8F7 /* LocationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewModel.swift; sourceTree = "<group>"; };
 		78681DB52D37E349006ACC2E /* DubDubGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubDubGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78681DB82D37E349006ACC2E /* DubDubGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DubDubGrubApp.swift; sourceTree = "<group>"; };
 		78681DBC2D37E34C006ACC2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +93,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7844EA6F2D5F4A89001CA8F7 /* LocationListView */ = {
+			isa = PBXGroup;
+			children = (
+				7844EA702D5F4AF1001CA8F7 /* LocationListViewModel.swift */,
+				78681DCB2D37E81E006ACC2E /* LocationListView.swift */,
+				78BED1462D40E3F7005F7676 /* Cells */,
+			);
+			path = LocationListView;
+			sourceTree = "<group>";
+		};
 		78681DAC2D37E349006ACC2E = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +168,6 @@
 			children = (
 				78BED13D2D40DF7A005F7676 /* CustomModifiers.swift */,
 				78BED1472D40E403005F7676 /* CustomViews */,
-				78BED1462D40E3F7005F7676 /* Cells */,
 				78BED1452D40E3A2005F7676 /* Screens */,
 			);
 			path = Views;
@@ -165,11 +176,11 @@
 		78BED1452D40E3A2005F7676 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				7844EA6F2D5F4A89001CA8F7 /* LocationListView */,
 				789993622D538B63006FF664 /* LocationDetailView */,
 				78BED16D2D4D497C005F7676 /* ProfileView */,
 				78BED1592D4671C8005F7676 /* LocationMapView */,
 				78681DC72D37E792006ACC2E /* AppTabView.swift */,
-				78681DCB2D37E81E006ACC2E /* LocationListView.swift */,
 				78BED1612D47857A005F7676 /* OnboardView.swift */,
 			);
 			path = Screens;
@@ -353,6 +364,7 @@
 				78BED13A2D40DC87005F7676 /* LocationCell.swift in Sources */,
 				789993662D53B795006FF664 /* ProfileModalView.swift in Sources */,
 				78BED1562D463872005F7676 /* CKRecord+Ext.swift in Sources */,
+				7844EA712D5F4AF1001CA8F7 /* LocationListViewModel.swift in Sources */,
 				78BED15E2D468D19005F7676 /* LocationManager.swift in Sources */,
 				78BED1602D47606D005F7676 /* CKAsset+Ext.swift in Sources */,
 				78BED1622D47857A005F7676 /* OnboardView.swift in Sources */,
