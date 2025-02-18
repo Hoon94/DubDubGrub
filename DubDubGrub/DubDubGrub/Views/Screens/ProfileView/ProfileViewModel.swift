@@ -24,10 +24,10 @@ final class ProfileViewModel: ObservableObject {
     private var existingProfileRecord: CKRecord? {
         didSet { profileContext = .update }
     }
+    
     var profileContext: ProfileContext = .create
     
-    func isValidProfile() -> Bool {
-        
+    private func isValidProfile() -> Bool {
         guard !firstName.isEmpty,
               !lastName.isEmpty,
               !companyName.isEmpty,
@@ -79,7 +79,6 @@ final class ProfileViewModel: ObservableObject {
                         }
                     }
                 }
-                
             case .failure(_):
                 DispatchQueue.main.async { self.alertItem = AlertContext.unableToCheckInOrOut }
             }
@@ -93,6 +92,7 @@ final class ProfileViewModel: ObservableObject {
         }
         
         let profileRecord = createProfileRecord()
+        
         guard let userRecord = CloudKitManager.shared.userRecord else {
             alertItem = AlertContext.noUserRecord
             return
@@ -101,6 +101,7 @@ final class ProfileViewModel: ObservableObject {
         userRecord["userProfile"] = CKRecord.Reference(recordID: profileRecord.recordID, action: .none)
         
         showLoadingView()
+        
         CloudKitManager.shared.batchSave(records: [userRecord, profileRecord]) { result in
             DispatchQueue.main.async { [self] in
                 hideLoadingView()
@@ -111,6 +112,7 @@ final class ProfileViewModel: ObservableObject {
                         existingProfileRecord = record
                         CloudKitManager.shared.profileRecordID = record.recordID
                     }
+                    
                     alertItem = AlertContext.createProfileSuccess
                 case .failure(_):
                     alertItem = AlertContext.createProfileFailure
@@ -120,7 +122,6 @@ final class ProfileViewModel: ObservableObject {
     }
     
     func getProfile() {
-        
         guard let userRecord = CloudKitManager.shared.userRecord else {
             alertItem = AlertContext.noUserRecord
             return
@@ -131,9 +132,11 @@ final class ProfileViewModel: ObservableObject {
         let profileRecordID = profileReference.recordID
         
         showLoadingView()
+        
         CloudKitManager.shared.fetchRecord(with: profileRecordID) { result in
             DispatchQueue.main.async { [self] in
                 hideLoadingView()
+                
                 switch result {
                 case .success(let record):
                     existingProfileRecord = record
@@ -169,13 +172,15 @@ final class ProfileViewModel: ObservableObject {
         profileRecord[DDGProfile.kAvatar]       = avatar.convertToCKAsset()
         
         showLoadingView()
+        
         CloudKitManager.shared.save(record: profileRecord) { result in
             DispatchQueue.main.async { [self] in
                 hideLoadingView()
+                
                 switch result {
-                case .success(let success):
+                case .success(_):
                     alertItem = AlertContext.updateProfileSuccess
-                case .failure(let failure):
+                case .failure(_):
                     alertItem = AlertContext.updateProfileFailure
                 }
             }

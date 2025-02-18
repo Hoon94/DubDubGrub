@@ -121,8 +121,8 @@
 		7844EA772D622302001CA8F7 /* AppTabView */ = {
 			isa = PBXGroup;
 			children = (
-				78681DC72D37E792006ACC2E /* AppTabView.swift */,
 				7844EA782D622336001CA8F7 /* AppTabViewModel.swift */,
+				78681DC72D37E792006ACC2E /* AppTabView.swift */,
 			);
 			path = AppTabView;
 			sourceTree = "<group>";

@@ -39,9 +39,9 @@ final class CloudKitManager {
     }
     
     func getLocations(completed: @escaping (Result<[DDGLocation], Error>) -> Void) {
-        let sortDescriptor = NSSortDescriptor(key: DDGLocation.kName, ascending: true)
-        let query = CKQuery(recordType: RecordType.location, predicate: NSPredicate(value: true))
-        query.sortDescriptors = [sortDescriptor]
+        let sortDescriptor      = NSSortDescriptor(key: DDGLocation.kName, ascending: true)
+        let query               = CKQuery(recordType: RecordType.location, predicate: NSPredicate(value: true))
+        query.sortDescriptors   = [sortDescriptor]
         
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { records, error in
             guard error == nil else {
@@ -60,9 +60,9 @@ final class CloudKitManager {
     }
     
     func getCheckedInProfiles(for locationID: CKRecord.ID, completed: @escaping (Result<[DDGProfile], Error>) -> Void) {
-        let reference = CKRecord.Reference(recordID: locationID, action: .none)
-        let predicate = NSPredicate(format: "isCheckedIn == %@", reference)
-        let query = CKQuery(recordType: RecordType.profile, predicate: predicate)
+        let reference   = CKRecord.Reference(recordID: locationID, action: .none)
+        let predicate   = NSPredicate(format: "isCheckedIn == %@", reference)
+        let query       = CKQuery(recordType: RecordType.profile, predicate: predicate)
         
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { records, error in
             guard let records = records, error == nil else {
@@ -76,10 +76,9 @@ final class CloudKitManager {
     }
     
     func getCheckedInProfilesDictionary(completed: @escaping (Result<[CKRecord.ID: [DDGProfile]], Error>) -> Void) {
-        let predicate = NSPredicate(format: "isCheckedInNilCheck == 1")
-        let query = CKQuery(recordType: RecordType.profile, predicate: predicate)
-        let operation = CKQueryOperation(query: query)
-//        operation.desiredKeys = [DDGProfile.kIsCheckedIn, DDGProfile.kAvatar]
+        let predicate   = NSPredicate(format: "isCheckedInNilCheck == 1")
+        let query       = CKQuery(recordType: RecordType.profile, predicate: predicate)
+        let operation   = CKQueryOperation(query: query)
         
         var checkedInProfiles: [CKRecord.ID: [DDGProfile]] = [:]
         
@@ -104,10 +103,10 @@ final class CloudKitManager {
     }
     
     func getCheckedInProfilesCount(completed: @escaping (Result<[CKRecord.ID: Int], Error>) -> Void) {
-        let predicate = NSPredicate(format: "isCheckedInNilCheck == 1")
-        let query = CKQuery(recordType: RecordType.profile, predicate: predicate)
-        let operation = CKQueryOperation(query: query)
-        operation.desiredKeys = [DDGProfile.kIsCheckedIn]
+        let predicate           = NSPredicate(format: "isCheckedInNilCheck == 1")
+        let query               = CKQuery(recordType: RecordType.profile, predicate: predicate)
+        let operation           = CKQueryOperation(query: query)
+        operation.desiredKeys   = [DDGProfile.kIsCheckedIn]
         
         var checkedInProfiles: [CKRecord.ID: Int] = [:]
         

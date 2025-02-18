@@ -9,6 +9,7 @@ import MapKit
 import SwiftUI
 
 struct LocationMapView: View {
+    
     @EnvironmentObject private var locationManager: LocationManager
     @StateObject private var viewModel = LocationMapViewModel()
     
@@ -47,9 +48,7 @@ struct LocationMapView: View {
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
         })
         .onAppear {
-            if locationManager.locations.isEmpty {
-                viewModel.getLocations(for: locationManager)
-            }
+            if locationManager.locations.isEmpty { viewModel.getLocations(for: locationManager) }
             
             viewModel.getCheckedInCounts()
         }

@@ -39,7 +39,6 @@ final class AppTabViewModel: NSObject, ObservableObject {
     }
     
     private func checkLocationAuthorization() {
-        
         guard let deviceLocationManager = deviceLocationManager else { return }
         
         switch deviceLocationManager.authorizationStatus {
