@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780F45492D6C7BD4007F4C53 /* ProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F45482D6C7BD4007F4C53 /* ProfileSheetView.swift */; };
 		7844EA712D5F4AF1001CA8F7 /* LocationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844EA702D5F4AF1001CA8F7 /* LocationListViewModel.swift */; };
 		7844EA742D60C374001CA8F7 /* MapBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844EA732D60C374001CA8F7 /* MapBalloon.swift */; };
 		7844EA762D60C8D8001CA8F7 /* DDGAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844EA752D60C8D8001CA8F7 /* DDGAnnotation.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		780F45482D6C7BD4007F4C53 /* ProfileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSheetView.swift; sourceTree = "<group>"; };
 		7844EA702D5F4AF1001CA8F7 /* LocationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewModel.swift; sourceTree = "<group>"; };
 		7844EA732D60C374001CA8F7 /* MapBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBalloon.swift; sourceTree = "<group>"; };
 		7844EA752D60C8D8001CA8F7 /* DDGAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGAnnotation.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				789993632D538BA1006FF664 /* LocationDetailViewModel.swift */,
 				78BED1352D394C1C005F7676 /* LocationDetailView.swift */,
 				789993652D53B794006FF664 /* ProfileModalView.swift */,
+				780F45482D6C7BD4007F4C53 /* ProfileSheetView.swift */,
 			);
 			path = LocationDetailView;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				78BED1602D47606D005F7676 /* CKAsset+Ext.swift in Sources */,
 				78BED1622D47857A005F7676 /* OnboardView.swift in Sources */,
 				7844EA742D60C374001CA8F7 /* MapBalloon.swift in Sources */,
+				780F45492D6C7BD4007F4C53 /* ProfileSheetView.swift in Sources */,
 				78BED1422D40E0FA005F7676 /* DDGButton.swift in Sources */,
 				789993612D4F87D2006FF664 /* LoadingView.swift in Sources */,
 				78BED16C2D4CC4D5005F7676 /* UIImage+Ext.swift in Sources */,
