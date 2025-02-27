@@ -14,12 +14,10 @@ struct LocationMapView: View {
     @StateObject private var viewModel = LocationMapViewModel()
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: locationManager.locations) { location in
                 MapAnnotation(coordinate: location.location.coordinate, anchorPoint: CGPoint(x: 0.5, y: 0.75)) {
-                    DDGAnnotation(location: location, 
-                                  number: viewModel.checkedInProfiles[location.id, default: 0])
-                        .accessibilityLabel(Text("Map Pin, \(location.name), \(viewModel.checkedInProfiles[location.id, default: 0]) people checked in."))
+                    DDGAnnotation(location: location, number: viewModel.checkedInProfiles[location.id, default: 0])
                         .onTapGesture {
                             locationManager.selectedLocation = location
                             viewModel.isShowingDetailView = true
@@ -29,12 +27,9 @@ struct LocationMapView: View {
             .tint(.grubRed)
             .ignoresSafeArea()
             
-            VStack {
-                LogoView(frameWidth: 125)
-                    .shadow(radius: 10)
-                    .accessibilityHidden(true)
-                Spacer()
-            }
+            LogoView(frameWidth: 125)
+                .shadow(radius: 10)
+                .accessibilityHidden(true)
         }
         .sheet(isPresented: $viewModel.isShowingDetailView) {
             if let location = locationManager.selectedLocation {
@@ -46,9 +41,7 @@ struct LocationMapView: View {
                 }
             }
         }
-        .alert(item: $viewModel.alertItem, content: { alertItem in
-            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
-        })
+        .alert(item: $viewModel.alertItem, content: { $0.alert })
         .onAppear {
             if locationManager.locations.isEmpty { viewModel.getLocations(for: locationManager) }
             

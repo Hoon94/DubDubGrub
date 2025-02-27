@@ -31,12 +31,12 @@ final class LocationMapViewModel: ObservableObject {
     
     func getCheckedInCounts() {
         CloudKitManager.shared.getCheckedInProfilesCount { result in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 switch result {
                 case .success(let checkedInProfiles):
                     self.checkedInProfiles = checkedInProfiles
                 case .failure(_):
-                    break
+                    alertItem = AlertContext.checkedInCount
                 }
             }
         }

@@ -7,23 +7,28 @@
 
 import CoreLocation
 import Foundation
+import SwiftUI
 
 final class AppTabViewModel: NSObject, ObservableObject {
     
     @Published var isShowingOnboardView = false
     @Published var alertItem: AlertItem?
+    @AppStorage("hasSeenOnboardView") var hasSeenOnboardView = false {
+        didSet { isShowingOnboardView = hasSeenOnboardView }
+    }
     
     var deviceLocationManager: CLLocationManager?
-    let kHasSeenOnboardView = "hasSeenOnboardView"
+//    let kHasSeenOnboardView = "hasSeenOnboardView"
     
-    var hasSeenOnboardView: Bool {
-        return UserDefaults.standard.bool(forKey: kHasSeenOnboardView)
-    }
+//    var hasSeenOnboardView: Bool {
+//        return UserDefaults.standard.bool(forKey: kHasSeenOnboardView)
+//    }
     
     func runStartupChecks() {
         if hasSeenOnboardView == false {
-            isShowingOnboardView = true
-            UserDefaults.standard.set(true, forKey: kHasSeenOnboardView)
+//            isShowingOnboardView = true
+//            UserDefaults.standard.set(true, forKey: kHasSeenOnboardView)
+            hasSeenOnboardView = true
         } else {
             checkIfLocationServicesIsEnabled()
         }

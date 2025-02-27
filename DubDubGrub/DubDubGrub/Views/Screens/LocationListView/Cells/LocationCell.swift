@@ -58,7 +58,7 @@ struct LocationCell: View {
     }
 }
 
-struct AdditionalProfilesView: View {
+fileprivate struct AdditionalProfilesView: View {
     
     var number: Int
     

@@ -36,7 +36,7 @@ struct AppTabView: View {
         }
         .tint(.brandPrimary)
         .sheet(isPresented: $viewModel.isShowingOnboardView, onDismiss: viewModel.checkIfLocationServicesIsEnabled) {
-            OnboardView(isShowingOnboardView: $viewModel.isShowingOnboardView)
+            OnboardView()
         }
         .alert(item: $viewModel.alertItem, content: { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
