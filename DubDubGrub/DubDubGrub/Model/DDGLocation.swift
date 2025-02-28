@@ -28,6 +28,16 @@ struct DDGLocation: Identifiable {
     let websiteURL: String
     let phoneNumber: String
     
+    var squareImage: UIImage {
+        guard let asset = squareAsset else { return PlaceholderImage.square }
+        return asset.convertToUIImage(in: .square)
+    }
+    
+    var bannerImage: UIImage {
+        guard let asset = bannerAsset else { return PlaceholderImage.banner }
+        return asset.convertToUIImage(in: .banner)
+    }
+    
     init(record: CKRecord) {
         id          = record.recordID
         name        = record[DDGLocation.kName] as? String ?? "N/A"
@@ -38,15 +48,5 @@ struct DDGLocation: Identifiable {
         location    = record[DDGLocation.kLocation] as? CLLocation ?? CLLocation(latitude: 0, longitude: 0)
         websiteURL  = record[DDGLocation.kWebsiteURL] as? String ?? "N/A"
         phoneNumber = record[DDGLocation.kPhoneNumber] as? String ?? "N/A"
-    }
-    
-    func createSquareImage() -> UIImage {
-        guard let asset = squareAsset else { return PlaceholderImage.square }
-        return asset.convertToUIImage(in: .square)
-    }
-    
-    func createBannerImage() -> UIImage {
-        guard let asset = bannerAsset else { return PlaceholderImage.banner }
-        return asset.convertToUIImage(in: .banner)
     }
 }

@@ -25,6 +25,11 @@ struct DDGProfile: Identifiable {
     let bio: String
     let isCheckedIn: CKRecord.Reference?
     
+    var avatarImage: UIImage {
+        guard let avatar = avatar else { return PlaceholderImage.avatar }
+        return avatar.convertToUIImage(in: .square)
+    }
+    
     init(record: CKRecord) {
         id          = record.recordID
         firstName   = record[DDGProfile.kFirstName] as? String ?? "N/A"
@@ -33,10 +38,5 @@ struct DDGProfile: Identifiable {
         companyName = record[DDGProfile.kCompanyName] as? String ?? "N/A"
         bio         = record[DDGProfile.kBio] as? String ?? "N/A"
         isCheckedIn = record[DDGProfile.kIsCheckedIn] as? CKRecord.Reference
-    }
-    
-    func createAvatarImage() -> UIImage {
-        guard let avatar = avatar else { return PlaceholderImage.avatar }
-        return avatar.convertToUIImage(in: .square)
     }
 }
