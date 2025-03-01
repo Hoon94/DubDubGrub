@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		780F45492D6C7BD4007F4C53 /* ProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F45482D6C7BD4007F4C53 /* ProfileSheetView.swift */; };
+		780F454B2D73440F007F4C53 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F454A2D73440F007F4C53 /* HapticManager.swift */; };
 		7844EA712D5F4AF1001CA8F7 /* LocationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844EA702D5F4AF1001CA8F7 /* LocationListViewModel.swift */; };
 		7844EA742D60C374001CA8F7 /* MapBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844EA732D60C374001CA8F7 /* MapBalloon.swift */; };
 		7844EA762D60C8D8001CA8F7 /* DDGAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844EA752D60C8D8001CA8F7 /* DDGAnnotation.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		780F45482D6C7BD4007F4C53 /* ProfileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSheetView.swift; sourceTree = "<group>"; };
+		780F454A2D73440F007F4C53 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		7844EA702D5F4AF1001CA8F7 /* LocationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewModel.swift; sourceTree = "<group>"; };
 		7844EA732D60C374001CA8F7 /* MapBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBalloon.swift; sourceTree = "<group>"; };
 		7844EA752D60C8D8001CA8F7 /* DDGAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGAnnotation.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			children = (
 				78BED1512D463162005F7676 /* CloudKitManager.swift */,
 				78BED15D2D468D19005F7676 /* LocationManager.swift */,
+				780F454A2D73440F007F4C53 /* HapticManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				78BED13E2D40DF7A005F7676 /* CustomModifiers.swift in Sources */,
 				78BED1382D40DA52005F7676 /* Color+Ext.swift in Sources */,
 				789993642D538BA1006FF664 /* LocationDetailViewModel.swift in Sources */,
+				780F454B2D73440F007F4C53 /* HapticManager.swift in Sources */,
 				78BED15B2D4671F3005F7676 /* LocationMapViewModel.swift in Sources */,
 				78681DCC2D37E81E006ACC2E /* LocationListView.swift in Sources */,
 				78BED16F2D4D49B4005F7676 /* ProfileViewModel.swift in Sources */,
