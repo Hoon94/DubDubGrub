@@ -27,6 +27,14 @@ final class ProfileViewModel: ObservableObject {
     
     var profileContext: ProfileContext = .create
     
+    var buttonAction: () {
+        profileContext == .create ? createProfile() : updateProfile()
+    }
+    
+    var buttonTitle: String {
+        profileContext == .create ? "Create Profile" : "Update Profile"
+    }
+    
     private func isValidProfile() -> Bool {
         guard !firstName.isEmpty,
               !lastName.isEmpty,
@@ -63,6 +71,8 @@ final class ProfileViewModel: ObservableObject {
             return
         }
         
+        showLoadingView()
+        
         CloudKitManager.shared.fetchRecord(with: profileID) { result in
             switch result {
             case .success(let record):
@@ -71,8 +81,11 @@ final class ProfileViewModel: ObservableObject {
                 
                 CloudKitManager.shared.save(record: record) { [self] result in
                     DispatchQueue.main.async {
+                        hideLoadingView()
+                        
                         switch result {
                         case .success(_):
+                            HapticManager.playSuccess()
                             isCheckedIn = false
                         case .failure(_):
                             alertItem = AlertContext.unableToCheckInOrOut
@@ -80,12 +93,15 @@ final class ProfileViewModel: ObservableObject {
                     }
                 }
             case .failure(_):
-                DispatchQueue.main.async { self.alertItem = AlertContext.unableToCheckInOrOut }
+                DispatchQueue.main.async {
+                    self.hideLoadingView()
+                    self.alertItem = AlertContext.unableToCheckInOrOut
+                }
             }
         }
     }
     
-    func createProfile() {
+    private func createProfile() {
         guard isValidProfile() else {
             alertItem = AlertContext.invalidProfile
             return
@@ -154,7 +170,7 @@ final class ProfileViewModel: ObservableObject {
         }
     }
     
-    func updateProfile() {
+    private func updateProfile() {
         guard isValidProfile() else {
             alertItem = AlertContext.invalidProfile
             return
