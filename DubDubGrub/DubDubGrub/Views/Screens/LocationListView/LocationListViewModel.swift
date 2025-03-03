@@ -34,8 +34,8 @@ final class LocationListViewModel: ObservableObject {
     }
     
     @ViewBuilder
-    func createLocationDetailView(for location: DDGLocation, in sizeCategory: ContentSizeCategory) -> some View {
-        if sizeCategory >= .accessibilityMedium {
+    func createLocationDetailView(for location: DDGLocation, in dynamicTypeSize: DynamicTypeSize) -> some View {
+        if dynamicTypeSize >= .accessibility3 {
             LocationDetailView(viewModel: LocationDetailViewModel(location: location)).embedInScrollView()
         } else {
             LocationDetailView(viewModel: LocationDetailViewModel(location: location))
