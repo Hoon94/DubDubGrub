@@ -9,6 +9,7 @@ import CloudKit
 import MapKit
 import SwiftUI
 
+@MainActor
 final class LocationMapViewModel: NSObject, ObservableObject {
     
     @Published var checkedInProfiles: [CKRecord.ID: Int] = [:]
@@ -29,14 +30,11 @@ final class LocationMapViewModel: NSObject, ObservableObject {
     }
     
     func getLocations(for locationManager: LocationManager) {
-        CloudKitManager.shared.getLocations { [self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let locations):
-                    locationManager.locations = locations
-                case .failure(_):
-                    alertItem = AlertContext.unableToGetLocations
-                }
+        Task {
+            do {
+                locationManager.locations = try await CloudKitManager.shared.getLocations()
+            } catch {
+                alertItem = AlertContext.unableToGetLocations
             }
         }
     }

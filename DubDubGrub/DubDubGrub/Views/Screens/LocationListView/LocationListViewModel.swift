@@ -8,6 +8,7 @@
 import CloudKit
 import SwiftUI
 
+@MainActor
 final class LocationListViewModel: ObservableObject {
     
     @Published var checkedInProfiles: [CKRecord.ID: [DDGProfile]] = [:]
