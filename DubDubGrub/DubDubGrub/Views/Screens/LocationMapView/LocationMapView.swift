@@ -5,6 +5,7 @@
 //  Created by Daehoon Lee on 1/15/25.
 //
 
+import CoreLocationUI
 import MapKit
 import SwiftUI
 
@@ -40,6 +41,17 @@ struct LocationMapView: View {
                         }
                 }
             }
+        }
+        .overlay(alignment: .bottomLeading) {
+            LocationButton(.currentLocation) {
+                viewModel.requestAllowOnceLocationPermission()
+            }
+            .foregroundStyle(.white)
+            .symbolVariant(.fill)
+            .tint(.grubRed)
+            .labelStyle(.iconOnly)
+            .clipShape(Circle())
+            .padding(EdgeInsets(top: 0, leading: 20, bottom: 40, trailing: 0))
         }
         .alert(item: $viewModel.alertItem, content: { $0.alert })
         .onAppear {

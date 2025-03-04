@@ -32,14 +32,11 @@ struct AppTabView: View {
         }
         .onAppear {
             CloudKitManager.shared.getUserRecord()
-            viewModel.runStartupChecks()
+            viewModel.checkIfHasSeenOnboard()
         }
-        .sheet(isPresented: $viewModel.isShowingOnboardView, onDismiss: viewModel.checkIfLocationServicesIsEnabled) {
+        .sheet(isPresented: $viewModel.isShowingOnboardView) {
             OnboardView()
         }
-        .alert(item: $viewModel.alertItem, content: { alertItem in
-            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
-        })
     }
 }
 
