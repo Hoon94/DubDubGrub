@@ -14,13 +14,11 @@ final class LocationListViewModel: ObservableObject {
     @Published var checkedInProfiles: [CKRecord.ID: [DDGProfile]] = [:]
     @Published var alertItem: AlertItem?
     
-    func getCheckedInProfilesDictionary() {
-        Task {
-            do {
-                checkedInProfiles = try await CloudKitManager.shared.getCheckedInProfilesDictionary()
-            } catch {
-                alertItem = AlertContext.unableToGetAllCheckedInProfiles
-            }
+    func getCheckedInProfilesDictionary() async {
+        do {
+            checkedInProfiles = try await CloudKitManager.shared.getCheckedInProfilesDictionary()
+        } catch {
+            alertItem = AlertContext.unableToGetAllCheckedInProfiles
         }
     }
     
