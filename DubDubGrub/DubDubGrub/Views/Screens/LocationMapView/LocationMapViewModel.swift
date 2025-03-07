@@ -9,7 +9,6 @@ import CloudKit
 import MapKit
 import SwiftUI
 
-@MainActor
 final class LocationMapViewModel: NSObject, ObservableObject {
     
     @Published var checkedInProfiles: [CKRecord.ID: Int] = [:]
@@ -29,6 +28,7 @@ final class LocationMapViewModel: NSObject, ObservableObject {
         deviceLocationManager.requestLocation()
     }
     
+    @MainActor
     func getLocations(for locationManager: LocationManager) {
         Task {
             do {
@@ -39,6 +39,7 @@ final class LocationMapViewModel: NSObject, ObservableObject {
         }
     }
     
+    @MainActor
     func getCheckedInCounts() {
         Task {
             do {

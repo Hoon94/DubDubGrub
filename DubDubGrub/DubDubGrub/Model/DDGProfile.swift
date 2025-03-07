@@ -25,7 +25,7 @@ struct DDGProfile: Identifiable {
     let bio: String
     
     var avatarImage: UIImage {
-        guard let avatar = avatar else { return PlaceholderImage.avatar }
+        guard let avatar else { return PlaceholderImage.avatar }
         return avatar.convertToUIImage(in: .square)
     }
     
