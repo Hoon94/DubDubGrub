@@ -11,6 +11,12 @@ struct AppTabView: View {
     
     @StateObject private var viewModel = AppTabViewModel()
     
+    init() {
+        let appearance = UITabBarAppearance()
+        appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
+    
     var body: some View {
         TabView {
             LocationMapView()

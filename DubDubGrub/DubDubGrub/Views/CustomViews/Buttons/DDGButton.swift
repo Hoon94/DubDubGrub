@@ -22,6 +22,16 @@ struct DDGButton: View {
     }
 }
 
-#Preview {
+#Preview("Light Mode") {
     DDGButton(title: "Test Button")
+}
+
+#Preview("Dark Mode") {
+    DDGButton(title: "Test Button")
+        .preferredColorScheme(.dark)
+}
+
+#Preview("Dark Landscape", traits: .landscapeRight) {
+    DDGButton(title: "Test Button")
+        .preferredColorScheme(.dark)
 }
