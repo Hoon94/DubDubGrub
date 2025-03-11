@@ -7,15 +7,17 @@
 
 import CloudKit
 import MapKit
+import Observation
 import SwiftUI
 
-final class LocationMapViewModel: NSObject, ObservableObject {
+@Observable
+final class LocationMapViewModel: NSObject {
     
-    @Published var checkedInProfiles: [CKRecord.ID: Int] = [:]
-    @Published var isShowingDetailView = false
-    @Published var alertItem: AlertItem?
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.331516, longitude: -121.891054),
-                                               span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    var checkedInProfiles: [CKRecord.ID: Int] = [:]
+    var isShowingDetailView = false
+    var alertItem: AlertItem?
+    var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.331516, longitude: -121.891054),
+                                    span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     
     let deviceLocationManager = CLLocationManager()
     

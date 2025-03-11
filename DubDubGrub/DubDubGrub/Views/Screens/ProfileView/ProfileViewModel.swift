@@ -6,27 +6,28 @@
 //
 
 import CloudKit
+import Observation
 
 enum ProfileContext { case create, update }
 
-@MainActor
-final class ProfileViewModel: ObservableObject {
+@MainActor @Observable
+final class ProfileViewModel {
     
-    @Published var firstName            = ""
-    @Published var lastName             = ""
-    @Published var companyName          = ""
-    @Published var bio                  = ""
-    @Published var avatar               = PlaceholderImage.avatar
-    @Published var isShowingPhotoPicker = false
-    @Published var isLoading            = false
-    @Published var isCheckedIn          = false
-    @Published var alertItem: AlertItem?
+    var firstName            = ""
+    var lastName             = ""
+    var companyName          = ""
+    var bio                  = ""
+    var avatar               = PlaceholderImage.avatar
+    var isShowingPhotoPicker = false
+    var isLoading            = false
+    var isCheckedIn          = false
+    var alertItem: AlertItem?
     
-    private var existingProfileRecord: CKRecord? {
+    @ObservationIgnored private var existingProfileRecord: CKRecord? {
         didSet { profileContext = .update }
     }
     
-    var profileContext: ProfileContext = .create
+    @ObservationIgnored var profileContext: ProfileContext = .create
     
     var buttonAction: () {
         profileContext == .create ? createProfile() : updateProfile()
@@ -81,7 +82,7 @@ final class ProfileViewModel: ObservableObject {
                 
                 let _ = try await CloudKitManager.shared.save(record: record)
                 isCheckedIn = false
-
+                
                 HapticManager.playSuccess()
                 hideLoadingView()
             } catch {

@@ -13,7 +13,7 @@ struct ProfileView: View {
         case firstName, lastName, companyName, bio
     }
     
-    @StateObject private var viewModel = ProfileViewModel()
+    @State private var viewModel = ProfileViewModel()
     @FocusState private var focusedTextField: ProfileTextField?
     
     var body: some View {
