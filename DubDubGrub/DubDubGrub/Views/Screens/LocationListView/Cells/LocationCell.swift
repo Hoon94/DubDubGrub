@@ -53,8 +53,6 @@ struct LocationCell: View {
 #Preview {
     Group {
         LocationCell(location: DDGLocation(record: MockData.location), profiles: [])
-            .previewLayout(.sizeThatFits)
-            .padding()
     }
 }
 

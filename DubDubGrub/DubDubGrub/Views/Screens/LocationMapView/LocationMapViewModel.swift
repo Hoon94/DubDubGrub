@@ -15,9 +15,22 @@ final class LocationMapViewModel: NSObject {
     
     var checkedInProfiles: [CKRecord.ID: Int] = [:]
     var isShowingDetailView = false
+    var isShowingLookAround = false
     var alertItem: AlertItem?
-    var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.331516, longitude: -121.891054),
-                                    span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    var route: MKRoute?
+    
+    var cameraPosition = MapCameraPosition.region(.init(center: CLLocationCoordinate2D(latitude: 37.331516,
+                                                                                       longitude: -121.891054),
+                                                        latitudinalMeters: 1200,
+                                                        longitudinalMeters: 1200))
+    
+    var lookAroundScene: MKLookAroundScene? {
+        didSet {
+            if let _ = lookAroundScene {
+                isShowingLookAround = true
+            }
+        }
+    }
     
     let deviceLocationManager = CLLocationManager()
     
@@ -51,6 +64,30 @@ final class LocationMapViewModel: NSObject {
             }
         }
     }
+    
+    @MainActor
+    func getLookAroundScene(for location: DDGLocation) {
+        Task {
+            let request = MKLookAroundSceneRequest(coordinate: location.location.coordinate)
+            lookAroundScene = try? await request.scene
+        }
+    }
+    
+    @MainActor
+    func getDirections(to location: DDGLocation) {
+        guard let userLocation = deviceLocationManager.location?.coordinate else { return }
+        
+        let destination = location.location.coordinate
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: .init(coordinate: userLocation))
+        request.destination = MKMapItem(placemark: .init(coordinate: destination))
+        request.transportType = .walking
+        
+        Task {
+            let directions = try? await MKDirections(request: request).calculate()
+            route = directions?.routes.first
+        }
+    }
 }
 
 extension LocationMapViewModel: CLLocationManagerDelegate {
@@ -58,8 +95,7 @@ extension LocationMapViewModel: CLLocationManagerDelegate {
         guard let currentLocation = locations.last else { return }
         
         withAnimation {
-            region = MKCoordinateRegion(center: currentLocation.coordinate,
-                                        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            cameraPosition = .region(.init(center: currentLocation.coordinate, latitudinalMeters: 1200, longitudinalMeters: 1200))
         }
     }
     
